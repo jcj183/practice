@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+    //如果promise的状态不改变then方法不会执行
+    const p = new Promise((resolve, reject) => {
+        resolve("111")
+        // reject('失败了')
+    })
+
+    //返回值：是一个promise的一个对象
+    //参数
+    //1.使一个函数
+    //2.还是一个函数
+    //then方法是构造Promise函数原型上的方法
+    //then方法就是函数,状态为resolve的fulfilled时执行第一个方法，reject时执行第二个方法
+    const t = p.then(
+        (value) => {//成功时返回该函数promise为fulfilled时返回该函数
+            console.log("成功时返回该函数",value)
+        },
+        (reason) => {//失败时返回该函数当promise状态为reject时执行该函数
+            console.log("失败时返回该函数",reason)
+        },
+    )
+        //在then方法的参数函数中，通过形参使用promise返回的结果
+
+
+    //then方法返回一个新的promise实例状态为pending
+
+    //链式操作
+    //new Promise((resolve,reject)=>{}).then.then
+</script>
+</body>
+</html>

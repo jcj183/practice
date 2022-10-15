@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+  <style>
+      div{
+          border: 1px solid ;
+          width: 300px;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+      }
+      button{
+          width: 250px;
+          height: 30px;
+          color: white;
+          border: none;
+          background-color: deepskyblue;
+      }
+      input{
+          outline: none;
+          width: 200px;
+          height: 30px;
+      }
+   table {
+       box-sizing: border-box;
+       border: 1px solid black;
+   }
+   th{
+       box-sizing: border-box;
+       padding: 10px;
+       border: 1px solid red;
+       width: 300px;
+   }
+
+  </style>
+</head>
+<body>
+<div>
+    <h2>篮球报名</h2>
+    <p>
+        姓名：<input type="text" id="name">
+    </p>
+    <p>
+        年龄：<input type="text" id="age">
+    </p>
+    <p>
+        身高：<input type="text" id="height">
+    </p>
+    <p>
+        电话：<input type="text" id="number">
+    </p>
+    <p>
+        <button id="but">立即报名</button>
+    </p>
+</div>
+<hr>
+<table>
+    <tr>
+        <th>姓名</th>
+        <th>年龄</th>
+        <th>身高</th>
+        <th>电话</th>
+        <th>操作</th>
+    </tr>
+    <tr id="tr">
+        <th id="na"></th>
+        <th id="ag"></th>
+        <th id="hg"></th>
+        <th id="nu"></th>
+        <th> <button id="delete">删除</button></th>
+    </tr>
+
+</table>
+<script>
+    let name = document.querySelector('#name')
+    let age = document.querySelector('#age')
+    let height = document.querySelector('#height')
+    let number = document.querySelector('#number')
+    let but = document.querySelector('#but')
+    let na = document.querySelector('#na')
+    let ag = document.querySelector('#ag')
+    let hg = document.querySelector('#hg')
+    let nu = document.querySelector('#nu')
+    let tr = document.querySelector('#tr')
+    let dele = document.querySelector('#delete')
+   but.addEventListener('click',()=>{
+       let namevalue = name.value
+       let agevalue = age.value
+       let heightvalue = height.value
+       let numbervalue = number.value
+       na.textContent = namevalue
+       ag.textContent = agevalue
+       hg.textContent = heightvalue
+       nu.textContent = numbervalue
+
+
+
+   })
+    dele.addEventListener('click',()=>{
+        na.textContent = ""
+        ag.textContent =""
+        hg.textContent = ""
+        nu.textContent = ""
+    })
+</script>
+</body>
+</html>

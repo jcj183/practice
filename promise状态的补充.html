@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+    const p = new Promise((resolve,reject)=>{
+            // resolve()
+        resolve()
+    })
+    const t = p.then(
+        (value)=>{
+            //使用return可以将p实例的状态改变为fulfilled
+            //如果then这里的代码出错会将t实例的状态改为reject
+            // console.log("成功1")
+            console.log(a)
+            // return 111
+        },
+        (reason)=>{
+            console.log("失败1",reason)
+        }
+    )
+    t.then(
+        (value)=>{
+            console.log(`成功2 ${value}`)
+        },
+        (reason)=>{
+            console.log(`失败2${reason}`)
+        }
+    )
+</script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./jquery.js"></script>
+</head>
+<body>
+
+<script>
+    function getData(url, data = {}) {
+        return $.ajax({
+            type: 'get',
+            url: url,
+            data: data,
+            success: function (res) {
+                //修改promise状态为成功，结果为res
+                // console.log(res)
+            },
+            error: function (res) {
+                //修改promise状态为失败，结果为res
+                // console.log(res)
+            }
+        })
+    }
+
+    getData('./1.json')
+        .then((data) => {
+            const {id} = data//解构赋值
+            return getData('./2.json', {id})
+        })
+        .then((data)=>{
+            const {username} = data
+            return getData('./3.json',username)
+        })
+        .then((data)=>{
+            console.log(data)
+
+        })
+    // new Promise((resolve,reject)=>{
+    //     $.ajax({
+    //         type:'get',
+    //         url:'./1.json',
+    //         success:function (res){
+    //             //修改promise状态为成功，结果为res
+    //             resolve(res)
+    //         },
+    //         error:function (res){
+    //             //修改promise状态为失败，结果为res
+    //             reject(res)
+    //         }
+    //     })
+    // }).then((data)=>{
+    //     // console.log(data)
+    //     const {id} = data//对象解构赋值
+    //     return new Promise((resolve,reject)=>{
+    //         $.ajax({
+    //             type:'get',
+    //             url:'./2.json',
+    //             data:{id},
+    //             success:function (res){
+    //                 //修改promise状态为成功，结果为res
+    //                 resolve(res)
+    //             },
+    //             error:function (res){
+    //                 //修改promise状态为失败，结果为res
+    //                 reject(res)
+    //             }
+    //         })
+    //     }).then((data)=>{
+    //         // console.log(data)
+    //         const {username} = data
+    //         $.ajax({
+    //             type:'get',
+    //             url:'./3.json',
+    //             data:{username},
+    //             success:function (res){
+    //                 //修改promise状态为成功，结果为res
+    //                 console.log(res)
+    //             },
+    //             error:function (res){
+    //                 //修改promise状态为失败，结果为res
+    //                 console.log(res)
+    //             }
+    //         })
+    //     })
+    // }).catch()
+</script>
+</body>
+</html>

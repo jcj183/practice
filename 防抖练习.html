@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<input type="text">
+<script>
+    //使用w3c标准监听事件注意定时器里面的处理函数如果是匿名函数不是箭头函数那么this的指向是不一样的，
+    // 箭头函数本身没有原型，this的指向是父级作用域，其他函数中的this是调用谁this就指向谁
+
+    //w3c使用示例
+    let t = null;
+    document.querySelector('input').addEventListener('input', function () {
+        if (t !== null) {
+           clearTimeout(t)
+        }
+        t = setTimeout(()=> {
+            console.log(this.value)
+        }, 500)
+    })
+</script>
+</body>
+</html>

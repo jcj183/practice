@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+  <style>
+    input:checked{
+
+    }
+  </style>
+</head>
+<body>
+<p>
+  <input type="checkbox">
+  新闻1
+</p>
+<p>
+  <input type="checkbox">
+  新闻2
+</p>
+<p>
+  <input type="checkbox">
+  新闻3
+</p>
+<p>
+  <input type="checkbox">
+  新闻4
+</p>
+<p>
+  <input type="checkbox">
+  新闻5
+</p>
+<button id="btn1">全选</button>
+<button id="btn2">反选</button>
+<button id="btn3">取消全选</button>
+
+<script>
+  // 全选
+let arr =[2,4,5,6,3]
+  arr.forEach(function (element,index){
+      console.log(element)
+  })
+  let btn1 = document.querySelector("#btn1")
+  let input = document.querySelectorAll("input")
+    btn1.onclick = ()=>{
+    // input.checked = true
+    input.forEach((element,index)=>{
+
+        element.checked = true
+    })
+  }
+  //反选
+  let btn2 = document.querySelector("#btn2")
+  btn2.onclick = ()=>{
+    input.forEach((element,index)=>{
+      element.checked = !element.checked
+    })
+  }
+  //全部取消
+  let btn3 = document.querySelector("#btn3")
+  btn3.onclick = ()=>{
+    input.forEach((element)=>{
+      element.checked =false
+
+    })
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<input type="text">
+<script>
+    // let input = document.querySelector('input')
+
+    document.querySelector('input').addEventListener('keyup',function(){
+    // this箭头函数在事件中无法拿到事件源的指向
+      if (this.value.length>7){
+        alert('输入字符不能大于7')
+      }
+    // })
+    // input.addEventListener('keyup',()=>{
+    //
+    //   if (input.value.length>7){
+    //     alert('输入字符不能大于7')
+    //   }
+    })
+</script>
+</body>
+</html>

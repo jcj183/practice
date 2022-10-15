@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        table {
+            margin: 0 auto;
+        }
+
+        .table-top {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            width: 300px;
+            height: 40px;
+            line-height: 40px;
+            background-color: deepskyblue;
+        }
+
+        .activ {
+            box-sizing: border-box;
+            border-top: red 3px solid;
+            color: #ffff;
+        }
+        .table-bottom{
+            text-align: center;
+            line-height: 300px;
+            color: white;
+            width: 300px;
+            height: 300px;
+            background-color: #7F7F7F;
+        }
+        .table-bottom div {
+            text-align: center;
+            line-height: 300px;
+            color: white;
+            width: 300px;
+            height: 300px;
+            background-color: #7F7F7F;
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+<div class="table">
+    <ul class="table-top">
+        <li >新闻</li>
+        <li>游戏</li>
+        <li>小说</li>
+        <li>影视</li>
+    </ul>
+    <div class="table-bottom">
+        <div>新闻</div>
+        <div>游戏</div>
+        <div>小说</div>
+        <div>影视</div>
+    </div>
+</div>
+<script>
+    //获取table-top和table-bottom的子节点集合
+    let li = document.querySelectorAll('.table-top li')
+    let div = document.querySelectorAll('.table-bottom div')
+    //遍历出ul中的所有子元素
+    li.forEach(function (element, index) {
+        //每件子元素添加监听
+        element.addEventListener('click', function () {
+            //触发点击事件遍历出所有子元素
+            li.forEach(function (value, j) {
+                //删除之前原有的样式
+                value.classList.remove('activ')
+                div[j].style.display = 'none'
+            })
+            //添加新的类名样式
+            element.classList.add('activ')
+            div[index].style.display = 'block'
+        })
+    })
+</script>
+</body>
+</html>

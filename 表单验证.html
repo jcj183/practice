@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+  <style>
+      h2{
+          width: 300px;
+          height: 40px;
+          text-align: center;
+      }
+    input{
+      width: 300px;
+      height: 40px;
+      outline: none;
+      border:1px solid black;
+        box-sizing: border-box;
+    }
+    button{
+      width: 300px;
+      height: 40px;
+      background-color: green;
+      color: #ffff;
+      border: none;
+
+    }
+  </style>
+</head>
+<body>
+<h2>会员登陆</h2>
+<p>
+  <input type="text" id="input1" placeholder="请输入用户">
+  <span></span>
+</p>
+<p>
+  <input type="text" id="input2" placeholder="请输入6-12位的密码">
+  <span></span>
+</p>
+<p>
+  <button id="but">登录</button>
+</p>
+<script>
+    let input1 = document.querySelector('#input1')
+    let input2 = document.querySelector('#input2')
+    let but = document.querySelector('#but')
+
+    but.onclick = ()=>{
+      let e = input1.value
+      let a = input2.value
+      if (e.length<5){
+        input1.style.borderBlockColor = 'red'
+        input1.nextElementSibling.style.fontSize = '12px'
+        input1.nextElementSibling.style.color = 'red'
+        input1.nextElementSibling.textContent = '用户名5个字以上'
+      }else{
+        input1.style.borderBlockColor = 'green'
+        input1.nextElementSibling.style.fontSize = '12px'
+        input1.nextElementSibling.style.color = 'green'
+        input1.nextElementSibling.textContent = '用户名可以注册'
+      }
+      if (a.length<6 || a.length>12){
+        input2.style.borderBlockColor = 'red'
+        input2.nextElementSibling.style.fontSize = '12px'
+        input2.nextElementSibling.style.color = 'red'
+        input2.nextElementSibling.textContent = '密码6-12个字'
+      }else{
+        input2.style.borderBlockColor = 'green'
+        input2.nextElementSibling.style.fontSize = '12px'
+        input2.nextElementSibling.style.color = 'green'
+        input2.nextElementSibling.textContent = '密码注册成功 '
+      }
+
+    }
+</script>
+</body>
+</html>

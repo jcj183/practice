@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+    //获取原型的方法有
+    //1、可以通过对象的__proto__获取
+
+    //2、可以通过构造函数的prototype获取
+    function Cat(name,age){
+        this.name = name;
+        this.age = age;
+        this.math = function (){
+            console.log("这是构造函数的函数方法")
+        }
+    }
+    let cat = new Cat("喵喵",2);
+    Cat.prototype.eat = function(){
+        console.log("喵喵在吃鱼")
+    }
+    cat.math()
+    //构造函数要用prototype获取
+    // console.log(Cat.prototype.eat());
+    //实例化要用__proto__获取
+    // console.log(cat.__proto__.eat());
+</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./jquery.js"></script>
+</head>
+<body>
+<script>
+    // 回调地狱回调函数嵌套回调
+    $.ajax({
+        type: 'get',
+        url: './1.json',
+        success: function (res) {
+            const {id} = res   //对象的解构赋值
+            console.log(id)
+            $.ajax({
+                type: 'get',
+                url: './2.json',
+                success: function (res) {
+                    const {username} = res //解构赋值
+                    console.log(res)
+
+                    //根据username获取邮箱
+                    $.ajax({
+                        type: 'get',
+                        url: './3.json',
+                        data: {username},
+                        success: function (res) {
+                            console.log(res)
+                        }
+                    })
+                }
+            })
+        }
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    // get  请求
+    // 创建Ajax对象
+    let ajax = new XMLHttpRequest()
+    //      创建对象
+    ajax.open('get', "url?键=值&键=值", true);
+    //    监听
+    ajax.onreadystatechange = function () {
+        if (ajax.readyState === 4 && ajax.status === 200) {
+            ajax.responseText
+        }
+    }
+    //    发送请求
+    ajax.send()
+
+    // post请求
+    let xml = new XMLHttpRequest()
+    //  创建请求对象
+    xml.open("POST", "url", true)
+    //  设置请求头
+    xml.setRequestHeader("Content-Type", "appliction/x-www-fom-urlencoded")
+    //  监听
+    xml.onreadystatechange = function () {
+        if (xml.readyState === 4 && xml.status === 200) {
+            xml.responseText
+        }
+    }
+    //    发送请求
+    xml.send("键 = 值" & "键 = 值")
+</script>
+</body>
+</html>

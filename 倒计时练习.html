@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+            #p{
+            width: 100px;
+            height: 100px;
+            font-size: 70px;
+            text-align: center;
+            border-radius: 50%;
+            border: none;
+            }
+   </style>
+</head>
+<body>
+        <button id="p"></button>
+<script>
+    
+    let set = 0;
+    p.onclick = function(){
+        clearInterval(set)
+        let number = 10;
+        set = setInterval(function(){
+            --number;
+            if(number<=0){
+                clearInterval(set)
+            }
+            p.innerHTML = number
+            let  r = getRandomNumber(255,0)
+            let  g = getRandomNumber(255,0)
+            let  b = getRandomNumber(255,0)
+            console.log(r,g,b)
+            p.style.background = `rgb(${r},${g},${b})`
+
+        },1000);
+        
+    }
+    // lorem
+    function getRandomNumber(max,min){
+      return   Math.floor(Math.random()*(max-min+1)+min)
+    }
+</script>
+</body>
+</html>

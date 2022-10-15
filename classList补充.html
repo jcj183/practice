@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+  <style>
+    div{
+      width: 200px;
+      height: 40px;
+      border: 1px solid ;
+    }
+    a{
+      display: inline-block;
+      width: 30px;
+      line-height: 40px;
+      text-decoration: none;
+      margin-left: 10px;
+    }
+    .activ{
+      border-top: deepskyblue 3px solid;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <a href="javascript:;" class="activ">111</a>
+    <a href="javascript:;">222</a>
+    <a href="javascript:;">333</a>
+    <a href="javascript:;">444</a>
+  </div>
+  <script>
+//获取ul中a标签的集合
+    let a = document.querySelectorAll('div a')
+//遍历出每一个a标签
+    a.forEach(function (element){
+      //给每一个a标签绑定监听点击事件
+      element.addEventListener('click',function (){
+        //点击a标签触发把每一个a标签中的activ删除一遍
+          a.forEach(function (value){
+            value.classList .remove('activ')
+          })
+        //然后把点击上的a标签新增一个activ属性
+          element.classList.add('activ')
+      })
+
+    })
+
+
+  </script>
+</body>
+</html>

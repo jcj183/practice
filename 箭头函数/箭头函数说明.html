@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+    // 匿名函数使用原型prototype的他的this会指向函数内容
+    let fn= function (){
+        let obj = {
+            name : '张三',
+            age : 18,
+        }
+        return  obj
+    }
+    console.log(fn.prototype);
+    //箭头函数是没有原型的他的this指向是父级内容
+
+    let f = ()=>{
+        let obj = {
+            name : '张三',
+            age : 18,
+        }
+    }
+    console.log(f.prototype);
+</script>
+</body>
+</html>

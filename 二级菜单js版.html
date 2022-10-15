@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    a{
+      display: block;
+      text-decoration: none;
+      color: black;
+      line-height: 25px;
+    }
+
+    .container{
+      margin: 0 auto;
+      width: 1200px;
+    }
+    .menu{
+      position: relative;
+      text-indent: 20px;
+      width: 200px;
+      height: 500px;
+      background-color: burlywood;
+      list-style: none  ;
+    }
+    .menu li div{
+      background-color: #7F7F7F;
+      box-sizing: border-box;
+      border: 2px solid black;
+      position: absolute;
+      left: 200px;
+      top: 0;
+      width: 1000px;
+      height: 500px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <ul class="menu">
+    <li>
+      <a href="javascript:;">家用电器</a>
+      <div>111</div>
+    </li>
+    <li>
+      <a href="javascript:;">家用电器</a>
+      <div>222</div>
+    </li>
+    <li>
+      <a href="javascript:;">家用电器</a>
+      <div>222</div>
+    </li>
+    <li>
+      <a href="javascript:;">家用电器</a>
+      <div>222</div>
+    </li>
+  </ul>
+</div>
+<script>
+<!--  遍历ul里面的li标签-->
+  document.querySelectorAll('li').forEach(function (element){
+    element.addEventListener('mouseover',function (){
+      //li标签加背景色
+      element.style.background = '#7F7F7F'
+      //a标签加字体颜色
+      element.children[0].style.color = 'red'
+      //div转为显示
+      element.children[1].style.display = 'block'
+    })
+    element.addEventListener('mouseout',function (){
+      element.style.backgroundColor = ''
+      element.children[0].style.color = ''
+      element.children[1].style.display = 'none'
+    })
+  })
+
+</script>
+</body>
+</html>

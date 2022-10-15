@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1 {
+            width: 200px;
+            height: 200px;
+            background-color: aqua;
+        }
+
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color: cadetblue;
+        }
+        p{
+            background-color: cornflowerblue;
+        }
+        ul{
+            list-style: none;
+        }
+        .red{
+            color: red;
+        }
+        .black{
+            background: black;
+        }
+        .si{
+            font-size: 40px;
+        }
+    </style>
+</head>
+
+<body>
+<ul>
+    <li>111</li>
+    <li>222</li>
+    <li>333</li>
+</ul>
+<button id="but">新增</button>
+<button id="but1">删除</button>
+    <script>
+<!--        创建节点-->
+        let button = document.querySelector("#but");
+        button.onclick = function(){
+            // 添加li节点
+            let li = document.createElement('li')
+            // 增加标签内容
+            li.innerHTML = '这是增加的节点'
+            // 末尾追加
+            document.querySelector('ul').append(li)
+            // 开头追加
+            // document.querySelector('ul').prepend(li)
+        }
+        // 删除li节点
+        document.querySelector('#but1').onclick = function(){
+            document.querySelector('li').remove()
+        }
+        document.querySelector('ul').className = 'red black'
+        document.querySelector('ul').style.fontSize = '50px'
+    </script>
+</body>
+
+</html>
