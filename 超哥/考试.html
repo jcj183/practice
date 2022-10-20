@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 310px;
+            height: 300px;
+            border: 1px solid;
+        }
+        .box1{
+            width: 100px;
+            height: 100px;
+            background-color: #7F7F7F;
+            float: left;
+            position: fixed;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+
+</div>
+<script>
+  //11.请声明一个函数，要求函数的参数是数组，函数最后会返回数组中各个数字相乘的结果。
+  // let arr = [1,2,3,5]
+  // function fn(arr){
+  //     let product = 1
+  //     arr.forEach(function (element,index){
+  //         product *=element
+  //
+  //     })
+  //     console.log(product)
+  //     return product
+  // }
+  // fn(arr)
+
+
+  //13.定义一个对象，该对象是用来描述一只猫，类型是英短，名字是kathy，母猫
+  //年龄两岁，爱好有睡觉，上蹿下跳、挠沙发。定义该对象后，请遍历该对象，将各
+  //属性值push到一个名为values的数组中
+  //   let cat = {
+  //       type:'英短',
+  //       name:'kathy',
+  //       sex:'母',
+  //       age:'2岁',
+  //       like:['睡觉','上窜下跳','挠沙发']
+  //   };
+  //   let values = [];
+  // for (let catKey in cat) {
+  //     values.push(cat[catKey])
+  // }
+  // console.log(values)
+
+  //14.每过一秒，console.log数字，从0开始打印到5，然后停止，不再打印
+  // let number  = 0
+  // let set = setInterval(function (){
+  //     if (number>=5)clearInterval(set)
+  //     console.log(number)
+  //     number++
+  // },1000)
+  //15.求解1-100中能被3整除的所有数字的和
+  //   let sum = 0
+  //   for (let i = 1 ; i<=100 ; i++){
+  //       if (i%3===0){
+  //           sum+=i
+  //       }
+  //   }
+  // console.log(sum)
+  //16.有一个div<div class="box"></div>,
+  // 请使用原生js为其绑定点击事件，点击后将他的背景改为蓝色
+  //   document.querySelector('.box').addEventListener('click',function (){
+  //       this.style.background = '#2c8dfb'
+  //   })
+</script>
+</body>
+</html>

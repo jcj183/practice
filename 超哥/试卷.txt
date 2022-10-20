@@ -1,0 +1,96 @@
+1.简答题:请对以下HTML标签进行分类，并说出行内标签与块级标签的区别：
+<h2>、<p>、<a>、<img>、<ul>、<span>、<div>、<input>
+行内标签：<a>、<img>、<span>、<input>
+块级标签：<h2>、<p>、<ul>、<div>
+区别：块级标签在默认情况是独占一行，不与其他标签共享一行，可以设置宽高
+行内标签是会共享一行的，而且不能单独设置高度，他的高度是由内容高度决定的
+
+2.简答题:请写出你知道的在HTML标签中引入css的方式（共三种），哪种方式更好，为什么？
+有内联式、外联式，内嵌式
+外联式的引入方式更好，能够实现规范的结构与样式相分离，整体分离更加规范简洁、明了
+
+3.简答题:关于css选择器，请写出行内样式、通用选择器、标签选择器、类选择器、id选择器他们的优先级关系
+行内样式>id选择器>类选择器>标签选择器>通用选择器
+
+4.简答题:写出你熟知的设置文本样式的css属性，以及属性含义，至少写五个
+    text-align                 文本对齐方式
+    color:颜色;              文本颜色
+    line-height             行高
+    font-width              文本加粗
+    font-size:大小值;          文本字体大小
+
+5.如何让一个元素绝对居中，请列举三种方式
+    1.元素父级display设置flex
+    添加justify-content: center;
+        align-items: center;
+
+    2.position:absolute;
+      top:50%;
+      Left:50%;
+      transform:translate(-50%,-50%)
+
+    3.position:absolute;
+            top:50%;
+            Left:50%;
+            margin-top:-高度的一半;
+            margin-left:-宽度的一半;
+
+6.css盒模型由哪几部分组成？css盒模型有哪两种？分别通过什么属性设置？这两种css盒模型之间的区别
+    css盒模型由：content+border+padding+margin组成
+    盒模型分为标准模式和怪异模式
+    通过box-sizing:border-box     切换怪异盒子模式
+        box-sizing:content-box    切换标准盒子模式
+
+    怪异盒子模式：width =content（内容+内边距+边框）
+    标准盒子模式：width = content（内容）+内边距+边框
+
+7.简答题:请写出标准的清除浮动方案的css代码
+    选择器::after{
+        content : '';
+        display:block;
+        clear:both;
+    }
+
+8.简答题:css的position属性可以设置哪些值？以及他们的区别
+    absolut         基于父级定位  会脱离文档流
+    relative      基于自身定位    不会脱离文档流
+    fixed       基于浏览器窗口进行定位 会脱离文档流
+
+
+9.js有哪些数据类型？
+基本数据类型：number、string、boolean、null、undefined
+引用数据类型: object（数组，函数）
+
+10.let、const、var的区别
+     let    可以重新赋值  不能重复定义同一个变量
+     const  不能重新赋值  不能重复定义同一个常量
+     var    可以重新赋值  可以重复定义同一个变量
+
+11.操作数组的方法有哪些
+改变数组
+     arr.join()     数组转字符串
+     arr.pop()         删除最后一个元素并抛出
+     arr.push()         添加元素到数组末尾
+     arr.concat()       链接合并两个数组
+     arr.slice()        截取
+     arr.splice()       修改、增加、删除元素
+     arr.shift()        删除数组第一个元素
+     arr.unshift()      添加一个或多个元素到数组首位
+不改变数组
+     arr.indexOf()      查找第一个符合的要求的元素（有返回元素，没有返回-1）
+     arr.lastIndexOf()  查找最后以后符合要求的元素
+     arr.forEach()      遍历数组
+     arr.includes()      比较是否出现相同元素返回值是布尔值
+
+17.DOM和BOM分别是什么？
+    DOM是文档对象模型，他不是一个具体的对象，学习DOM就是学习它的属性和方法
+    学习document的属性和方法
+    BOM是浏览器对象模型，他不是一个具体的对象，学习BOM就是学习它的属性和方法
+    学习window的属性和方法
+
+18.项目代码使用git进行版本控制，做了文件的变更。现在想先查看下文件状态，然后将本地的变更推送到远程仓库，请先按顺序写出git指令
+    git status
+    git add .
+    git commit -m"做了文件变更"
+    git pull
+    git push

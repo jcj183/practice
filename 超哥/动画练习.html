@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            padding-top:100px;
+            display: flex;
+            justify-content: space-around;
+
+        }
+        ul{
+            display: flex;
+            justify-content: space-between;
+            list-style: none;
+        }
+        li{
+            width: 50px;
+            height: 50px;
+            background: url("./img/微信图片_20221018214853.png") center/cover;
+            margin: 5px;
+            line-height: 50px;
+            text-align: center;
+            transition: 1s transform;
+        }
+        li:nth-child(2){
+            transform:scale(1);
+        }
+        li:nth-child(3){
+            /*transform:rotate(5deg);*/
+        }
+        li:hover{
+           /*transform:scale(1);*/
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+    <script>
+
+        //自动旋转(此方法有问题待议)
+        let r = 1
+        let li2 = document.querySelector('li:nth-child(3)')
+        setInterval(function (){
+            console.log(r)
+            if (li2.style.transform ==='rotate(-360deg)'){
+                li2.style.transform = `rotate(${200}deg)`
+            }else{
+                // li2.style.transform = 'rotate(-360deg)'
+                li2.style.transform = `rotate(${r}deg)`
+            }
+            r= r+360
+        },400)
+
+        // 自动缩放
+        let li1 = document.querySelector('li:nth-child(2)')
+           let set1 = setInterval(function (){
+               let a = li1.style.transform
+               if (a==="scale(1)"){
+                   li1.style.transform = 'scale(1.1)'
+               }else {
+                   li1.style.transform = 'scale(1)'
+               }
+           },1000)
+        // 上下跳动js代码
+        let li = document.querySelector('li:first-child')
+           let set = setInterval(function (){
+               let a = li.style.transform
+               if (a==="translateY(-100px)"){
+                   li.style.transform = 'translateY(100px)'
+               }else {
+                   li.style.transform = 'translateY(-100px)'
+               }
+           },500)
+    </script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        html {
+            width: 100%;
+            height: 100%;
+        }
+
+        body {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        label {
+            position: relative;
+        }
+
+        input {
+            height: 30px;
+            width: 250px;
+            outline: none;
+        }
+
+        span {
+            position: absolute;
+            display: inline-block;
+            width: 50px;
+            height: 25px;
+            margin: 3px 0 0 1px;
+            text-align: center;
+            z-index: 88;
+            background-color: #ffffff;
+            line-height: 30px;
+        }
+    </style>
+</head>
+<body>
+<label>
+    <span>姓名</span>
+    <input type="text">
+</label>
+<script>
+    let span = document.querySelector('span')
+    let input = document.querySelector('input')
+    input.addEventListener('input', function () {
+
+    })
+
+    input.addEventListener('focus', function () {
+        span.style.transition = 'all 0.7s'
+        span.style.transform = 'translate(10px,-20px)'
+        span.style.fontSize = '15px'
+        span.style.borderLeft = '1px solid'
+        span.style.borderRight = '1px solid'
+
+
+        input.addEventListener('blur', function () {
+            if (input.value !== '') {
+                span.style.transition = 'all 0.7s'
+                span.style.transform = 'translate(10px,-20px)'
+                span.style.fontSize = '15px'
+                span.style.borderLeft = '1px solid'
+                span.style.borderRight = '1px solid'
+            } else {
+                span.style.transition = 'all 0.7s'
+                span.style.transform = 'translate(0,0)'
+                span.style.fontSize = '12px'
+                span.style.borderLeft = ''
+                span.style.borderRight = ''
+            }
+
+        })
+
+
+    })
+
+
+</script>
+</body>
+</html>
