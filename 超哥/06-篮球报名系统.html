@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            width: 1000px;
+            margin: 10px auto;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            text-align: center;
+            line-height: 35px;
+            border-top: 2px solid #e1e1e1;
+            color: #fff;
+        }
+
+        tr:nth-child(2n) {
+            background-color: deeppink;
+        }
+
+        tr:nth-child(2n+1) {
+            background-color: skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 表单 -->
+    <form action="">
+        <p>
+            姓名: <input type="text" id="uname">
+        </p>
+        <p>
+            年龄: <input type="text" id="age">
+        </p>
+        <p>
+            身高: <input type="text" id="height">
+        </p>
+        <p>
+            电话: <input type="text" id="phone">
+        </p>
+        <p>
+            <button type="button" id="signBtn">立即报名</button>
+        </p>
+    </form>
+    <!-- 表格 -->
+
+    <table>
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>年龄</th>
+                <th>身高(cm)</th>
+                <th>电话</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody id="content">
+
+
+        </tbody>
+    </table>
+
+    <script>
+        //找节点
+        let signBtn = document.querySelector("#signBtn");
+        let content = document.querySelector("#content");
+        let phone = document.querySelector("#phone");
+        let height = document.querySelector("#height");
+        let age = document.querySelector("#age");
+        let uname = document.querySelector("#uname");
+
+        //打印节点
+
+
+        //给立即报名按钮添加点击事件---增加数据
+        signBtn.addEventListener("click", function () {
+            //1.获取表单数据
+
+            let unameVal = uname.value;
+            let phoneVal = phone.value;
+            let heightVal = height.value;
+            let ageVal = age.value;
+
+
+            // console.log(unameVal, phoneVal, heightVal, ageVal)
+
+            //创建节点
+            let tr = document.createElement("tr");
+            //添加内容
+            tr.innerHTML = `
+                <td>${unameVal}</td>
+                <td>${ageVal}</td>
+                <td>${heightVal}</td>
+                <td>${phoneVal}</td>
+                <td><button>删除</button></td>
+            `
+            //追加
+            content.prepend(tr)
+
+        })
+
+
+        //删除数据  事件委派  删除按钮有多个  动态生成的
+        content.addEventListener("click", function (event) {
+            if (event.target.nodeName == "BUTTON") {
+                //event.target.parentNode.parentNode.remove();
+
+                //closest() 向上查找最近符合要求的元素
+                if (confirm("您确定要删除吗？不可逆哟！")) {
+                    event.target.closest("tr").remove()
+                }
+
+            }
+        })
+    </script>
+</body>
+
+</html>

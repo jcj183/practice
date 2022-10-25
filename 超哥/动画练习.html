@@ -21,7 +21,7 @@
         li{
             width: 50px;
             height: 50px;
-            background: url("./img/微信图片_20221018214853.png") center/cover;
+            background: url("../img/微信图片_20221018214853.png") center/cover;
             margin: 5px;
             line-height: 50px;
             text-align: center;
@@ -47,18 +47,18 @@
     <script>
 
         //自动旋转(此方法有问题待议)
-        let r = 1
-        let li2 = document.querySelector('li:nth-child(3)')
-        setInterval(function (){
-            console.log(r)
-            if (li2.style.transform ==='rotate(-360deg)'){
-                li2.style.transform = `rotate(${200}deg)`
-            }else{
-                // li2.style.transform = 'rotate(-360deg)'
-                li2.style.transform = `rotate(${r}deg)`
-            }
-            r= r+360
-        },400)
+        // let r = 1
+        // let li2 = document.querySelector('li:nth-child(3)')
+        // setInterval(function (){
+        //     console.log(r)
+        //     if (li2.style.transform ==='rotate(-360deg)'){
+        //         li2.style.transform = `rotate(${200}deg)`
+        //     }else{
+        //         // li2.style.transform = 'rotate(-360deg)'
+        //         li2.style.transform = `rotate(${r}deg)`
+        //     }
+        //     r= r+360
+        // },400)
 
         // 自动缩放
         let li1 = document.querySelector('li:nth-child(2)')

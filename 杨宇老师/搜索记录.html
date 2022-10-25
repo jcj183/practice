@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+<!--    <link rel="stylesheet" href="./css/index.less">-->
+    <link rel="stylesheet" href="./css/备份.css">
+</head>
+<body>
+    <header>
+        <input type="text">
+        <button class="search">搜索</button>
+    </header>
+    <p>
+        <span>搜索记录</span>
+        <button id="clear">清空</button>
+    </p>
+    <ul>
+
+    </ul>
+<script>
+    let input = document.querySelector('input')
+    let search = document.querySelector('.search')
+    let ul = document.querySelector('ul')
+    let clear = document.querySelector('#clear')
+    search.addEventListener('click',function (){
+        let value = input.value
+        let local = JSON.parse(localStorage.getItem('localData'))
+        if (local){
+            local.push(value)
+            localStorage.setItem('localData',JSON.stringify(local))
+        }else{
+            let arr = []
+            arr.push(value)
+            localStorage.setItem('localData',JSON.stringify(arr))
+        }
+        ul.innerHTML = ''
+        add()
+        input.value = ''
+    })
+    clear.addEventListener('click',function (){
+        localStorage.clear()
+        ul.innerHTML = ''
+        input.value = ''
+    })
+    function add(){
+        JSON.parse(localStorage.getItem('localData')).forEach(function (element,index){
+            ul.innerHTML += `
+            <li>${element}</li>
+        `
+        })
+
+    }
+</script>
+</body>
+</html>
