@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="e9a2354d-94ca-449f-917a-18222ead9e8e" name="变更" comment="">
+      <change afterPath="$PROJECT_DIR$/../杨宇老师/history.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../杨宇老师/js课程/arguments.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../杨宇老师/js课程/obj.assign.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../杨宇老师/js课程/object.keys.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../杨宇老师/js课程/数组every（）.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../杨宇老师/js课程/数组filter（）.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../杨宇老师/js课程/数组find()和findIndex().js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../杨宇老师/js课程/数组flat.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../杨宇老师/js课程/数组map()方法.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../杨宇老师/js课程/数组revers().js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../杨宇老师/js课程/数组some().js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../杨宇老师/js课程/数组sort（）.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../杨宇老师/js课程/递归.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../杨宇老师/window.onhashchenge.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../杨宇老师/时间练习.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../杨宇老师/练习.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../杨宇老师/帮朋友练练.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../杨宇老师/练习js.js" beforeDir="false" afterPath="$PROJECT_DIR$/../杨宇老师/练习js.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../杨宇老师/课堂练习.html" beforeDir="false" afterPath="$PROJECT_DIR$/../杨宇老师/课堂练习.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../杨宇老师/随便练练.html" beforeDir="false" afterPath="$PROJECT_DIR$/../杨宇老师/随便练练.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2GkIw54bCPYGMVQCvvF12ry1rSK" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="e9a2354d-94ca-449f-917a-18222ead9e8e" name="变更" comment="" />
+      <created>1666926391864</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1666926391864</updated>
+      <workItem from="1666926393375" duration="41000" />
+      <workItem from="1666926967241" duration="11000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
