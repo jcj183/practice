@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+    // //定义一个字符串
+    // let str = 'string7';
+    // //定义一个正则
+    // let reg = /7/;
+    // // let reG = new RegExp('8')
+    // //匹配规则
+    // let a = reg.test(str)
+    // //判断输出结果
+    // if (a){
+    //     console.log('有7')
+    // }else{
+    //     console.log('没有7')
+    // }
+
+    //exec匹配
+    let string = 'aw142s2din7f2ie46nbrb74g3uj9oi95efhi';
+    let reg = /\d/g;
+    let arr = [];
+    let b = reg.exec(string)
+    while (b = reg.exec(string)){
+        arr.push(b[0])
+    }
+    console.log(arr.join(''))
+</script>
+</body>
+</html>

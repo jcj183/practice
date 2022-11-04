@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 <!--    <link rel="stylesheet" href="./css/index.less">-->
-    <link rel="stylesheet" href="./css/备份.css">
+    <link rel="stylesheet" href="../css/备份.css">
 </head>
 <body>
     <header>
@@ -26,20 +26,25 @@
     let search = document.querySelector('.search')
     let ul = document.querySelector('ul')
     let clear = document.querySelector('#clear')
+
     search.addEventListener('click',function (){
-        let value = input.value
-        let local = JSON.parse(localStorage.getItem('localData'))
-        if (local){
-            local.push(value)
-            localStorage.setItem('localData',JSON.stringify(local))
-        }else{
-            let arr = []
-            arr.push(value)
-            localStorage.setItem('localData',JSON.stringify(arr))
+        if (input.value.length !==0){
+            let value = input.value
+            let local = JSON.parse(localStorage.getItem('localData'))
+            if (local){
+                local.push(value)
+                localStorage.setItem('localData',JSON.stringify(local))
+            }else{
+                let arr = []
+                arr.push(value)
+                localStorage.setItem('localData',JSON.stringify(arr))
+            }
+            ul.innerHTML = ''
+            add()
+            input.value = ''
+
         }
-        ul.innerHTML = ''
-        add()
-        input.value = ''
+
     })
     clear.addEventListener('click',function (){
         localStorage.clear()

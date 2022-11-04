@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+    //     let obj = new Date()
+    //     //面向过程
+    //     function set(key,value){
+    //         localStorage.setItem(key,JSON.stringify(value))
+    //     }
+    //
+    //     function get(key){
+    //         JSON.parse(localStorage.getItem(key))
+    //     }
+    //
+    //     function remove(value){
+    //         localStorage.removeItem(value)
+    //     }
+    //     function clear(){
+    //         localStorage.clear()
+    //     }
+    //
+    //     //面向对象
+    //     let local = {
+    //         set(key,value){
+    //             localStorage.setItem(key,JSON.stringify(value))
+    //         },
+    //         get(key){
+    //             JSON.parse(localStorage.getItem(key))
+    //         },
+    //         remove(value){
+    //             localStorage.removeItem(value)
+    //         },
+    //         clear(){
+    //             localStorage.clear()
+    //         }
+    //     }
+    // //pres
+    //     let pres = {
+    //         name:'张三',
+    //         age:19,
+    //         like:'玩游戏',
+    //         eag:function (){
+    //             console.log('吃饭')
+    //         },
+    //         run :function (){
+    //             console.log('跑步')
+    //         }
+    //     }
+
+    //创建构造函数
+    // function Press(name, age, sex) {
+    //     this.name = name;
+    //     this.age = age;
+    //     this.sex = sex;
+    //     this.fn1 = function () {
+    //         console.log('这是方法一')
+    //     };
+    //     this.fn2 = function () {
+    //         console.log('这是方法二')
+    //     }
+    // }
+    //
+    // //实例化对象
+    // let press = new Press('小寒', 19, '男')
+    // let press1 = new Press('小源', 19, '男')
+    // press.__proto__.eat = function (){console.log('这是吃饭') }
+    //     press.eat()
+    // console.log(press)
+    // console.log(press1)
+
+    //原型
+
+    // function Press(name,age,sex){
+    //     this.name = name;
+    //     this.age = age;
+    //     this.sex = sex;
+    // }
+    // let press = new Press()
+
+    // console.log(Press.prototype)
+    // console.log(press.__proto__)
+    // console.log(Press.prototype===press.__proto__)//构造函数原型prototype与实例化对象__proto__指向都为原型
+    // console.log(Press.prototype.constructor===Press)//原型中的constructor指向构造函数本身
+    // console.log(press.__proto__.__proto__.__proto__===null)  //true
+    // console.log(press.__proto__.__proto__===Object.prototype)//true
+
+    //每一个构造函数都有一个prototype属性指向原型
+    //实例化构造函数后构造函数this指向为实例化对象，中这个对象有一个__proto__的属性也指向原型
+    //原型中有一个属性constructor指向构造函数本身
+
+    //自己在原型上添加自己的方法
+    // let arr = new Array();
+    // Array.prototype.remove = function (){
+    //     console.log(111)
+    // }
+    // arr.remove()
+
+    //this指向七种方式
+    //全局    this指向window
+    //一般函数  this指向，谁调用this就指向谁
+    //构造函数  this指向，指向实例化对象
+    //事件处理函数    this指向，指向事件源
+    //箭头函数      this指向，指向所在作用域的上一级
+    //定时器       指向window对象
+    //对象        this指向，谁调用this就指向谁
+</script>
+</body>
+</html>

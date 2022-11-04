@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    function Cat(name,age,eat){
+        this.name = name;
+        this.age = age;
+        this.eat = function (){
+            console.log('吃鱼')
+        }
+    }
+    let cat = new Cat('咪咪','2')
+    Cat.prototype.fn = function fn(){
+        console.log('这是fn功能')
+    }
+    Cat.__proto__.fn1 =function fn1(){
+        console.log('这是fn1功能')
+    }
+    // console.log(cat.__proto__)
+    // console.log(Cat.prototype)
+    console.log(cat.__proto__===Cat.prototype)
+    console.log(cat.__proto__)
+    cat.fn()
+    Cat.fn1()
+</script>
+</body>
+</html>

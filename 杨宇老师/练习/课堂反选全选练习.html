@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        td{
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <th>
+            <lable>
+                <input type="checkbox" id="qx">全选
+            </lable>
+        </th>
+        <th>商品</th>
+        <th>数量</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><input type="checkbox" class="chek11"></td>
+            <td>小米</td>
+            <td><input type="number"></td>
+            <td><button>删除</button></td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" class="chek11"></td>
+            <td>华为</td>
+            <td><input type="number"></td>
+            <td><button>删除</button></td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" class="chek11"></td>
+            <td>坚果</td>
+            <td><input type="number"></td>
+            <td><button>删除</button></td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" class="chek11"></td>
+            <td>三星</td>
+            <td><input type="number"></td>
+            <td><button>删除</button></td>
+        </tr>
+    </tbody>
+</table>
+<script>
+    let chek11 = document.querySelectorAll('.chek11')
+    let chek = document.querySelectorAll('input')
+    let button1 = document.querySelectorAll('button')
+    let bodyTr = document.querySelectorAll('tbody tr')
+    let tbody = document.querySelector('tbody')
+    chek11.forEach(element=>{
+        element.addEventListener('click',function (){
+           let alllength = chek11.length
+            let lenGth = document.querySelectorAll('.chek11:checked').length
+            if (lenGth===alllength){
+                qx.checked = true
+            }
+        })
+
+    })
+    qx.addEventListener('click',function (){
+        if (qx.checked){
+            chek.forEach( (element)=>{
+                element.checked = true
+            })
+        }else {
+            chek.forEach( (element)=>{
+                element.checked = false
+            })
+        }
+    })
+    tbody.addEventListener('click',function (event){
+        if (event.target.nodeName==='BUTTON'){
+            event.target.closest('tr').remove()
+        }
+    })
+</script>
+</body>
+</html>

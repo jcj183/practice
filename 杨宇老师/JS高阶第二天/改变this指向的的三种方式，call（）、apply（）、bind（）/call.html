@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+    let xw = {
+        fn:function (content1,content2){
+            console.log(`${this.name} 对小红说 ${content1} ${content2}`)
+        }
+    }
+    let xx = {
+        name:'小军'
+    }
+    //使用call立即执行
+    xw.fn.call(xx,'今天夜色很美','我们去约会吧')
+</script>
+</body>
+</html>

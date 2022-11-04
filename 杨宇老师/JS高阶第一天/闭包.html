@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+    // let a = 100;
+    // function fn() {
+    //     console.log(a)
+    //  return    a += a
+    // }
+    // console.log(fn());
+    // function fn(){
+    //     let a = 200;
+    //     function fn1(){
+    //         let b = a+100
+    //         console.log(b)
+    //     }
+    //     fn1()
+    // }
+    // fn()
+    //案例1
+    // function mom(){
+    //     let money = 500;
+    //     function spend(){
+    //         console.log(money)
+    //         return   money -= 100
+    //
+    //     }
+    //     return spend
+    // }
+    // let mo = mom();
+    //     mo()
+    //     mo()
+    //     mo()
+    //案例二
+    //利用立即执行函数使用闭包
+    (function mom(){
+        let money = 500;
+        function spend(){
+            console.log(money)
+            return   money -= 100
+        }
+        window.spend = spend
+    })()
+
+    spend()
+
+</script>
+</body>
+</html>

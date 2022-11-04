@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<button id="but">点击发送get请求</button>
+<script>
+    but.addEventListener('click',function (){
+        let ajax = new XMLHttpRequest();
+        ajax.open('get','http://ajax.h5.itsource.cn:5000/api/testGet?name=%E5%BC%A0%E4%B8%89');
+        ajax.onreadystatechange = function (){
+            if (ajax.readyState ===4 && ajax.status===200){
+                let data = ajax.responseText
+            }
+        }
+        ajax.send()
+    })
+
+</script>
+</body>
+</html>

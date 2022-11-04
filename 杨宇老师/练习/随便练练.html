@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        table {
+            user-select: none;
+            width: 1000px;
+            margin: 10px auto;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            text-align: center;
+            line-height: 35px;
+            border-top: 2px solid #e1e1e1;
+            color: #fff;
+        }
+
+        tr:nth-child(2n) {
+            background-color: deeppink;
+        }
+
+        tr:nth-child(2n+1) {
+            background-color: skyblue;
+        }
+    </style>
+</head>
+<body>
+
+<script>
+    // //设置请求头
+    // let xml = new XMLHttpRequest();
+    // //请求方式和地址
+    // xml.open('post','url');
+    // //监听请求方式
+    // xml.onreadystatechange = function(){
+    //     if (xml.readyState===4&&xml.status===200){
+    //         let data = xml.responseText
+    //     }
+    // }
+    // //设置请求头
+    // xml.setRequestHeader('Content-Type','application/x-www-form-urlencoded')
+    // //发送请求方式
+    // xml.send()
+
+    // let xml =new XMLHttpRequest();
+    // xml.open('get','url')
+    // xml.onreadystatechange = function (){
+    //     if (xml.readyState===4&&xml.status===200){
+    //         let data = xml.responseText
+    //     }
+    // }
+    // xml.send()
+    let xm = {
+        fn : function (content1,content2){
+            console.log(`${this.name}说${content1} ${content2}`)
+        }
+    }
+    let xw = {
+        name:'小王'
+    }
+
+    xm.fn.call(xw,'今天天气不错','可以去玩耍')
+
+
+
+</script>
+</body>
+</html>

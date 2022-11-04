@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+    //instanceof检测引用数据类型
+    console.log([] instanceof Array)
+    console.log({} instanceof Object)
+    console.log(function (){} instanceof Function)
+
+    //instanceof检查基本数据类型需要包装一下
+    console.log(new String('你好') instanceof String)
+    console.log(new Number(90) instanceof Number)
+    console.log(new Boolean(true) instanceof Boolean)
+
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<a href="#h1" >盒子一</a>
+<a href="#h2" >盒子二</a>
+<a href="#h3" >盒子三</a>
+<a href="#h4" >盒子四</a>
+
+<button id="h1">后退</button>
+<button id="h2">前进</button>
+<button id="h3">go</button>
+<script>
+    h1.addEventListener('click',function (){
+        history.back()
+    })
+    h2.addEventListener('click',function (){
+        history.forward()
+    })
+    h3.addEventListener('click',function (){
+        history.go(2)
+    })
+</script>
+</body>
+</html>

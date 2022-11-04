@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<form action="">
+    <p>
+        用户：
+        <input type="text" id="input" name="username">
+        <span id="span"></span>
+    </p>
+    <p><button id="but">提交</button></p>
+</form>
+
+<script>
+    // 提交验证
+        but.addEventListener('click',function (event){
+            let flag = true;
+            let val = input.value
+            let reg = /^[\u4e00-\u9fa5]{1,}$/;
+            console.log(reg.test(val))
+            if (reg.test(val)){
+                alert('通过')
+            }else{
+                alert('验证不通过')
+                flag =false
+            }
+            if (flag){
+                alert('可以注册')
+            }else {
+                alert('不能注册')
+                event.preventDefault()
+            }
+        })
+
+
+    // 输入验证
+    // input.addEventListener('input',function (){
+    //     //获取input输入值
+    //   let   val = input.value
+    //     //定义正则
+    //     let reg = /^[a-zA-Z][a-zA-Z0-9_]{4,15}$/;
+    //   let a = reg.test(val)
+    //     console.log(a)
+    //     if (a=reg.test(val)){
+    //         span.innerHTML = '用户名正确'
+    //         span.style.color = 'green'
+    //     }else {
+    //         span.innerHTML = '用户名不正确'
+    //         span.style.color = 'red'
+    //     }
+    // })
+
+    // 失焦验证
+    // input.addEventListener('blur',function (){
+    //     let val = input.value;
+    //     let reg = /^[\u4e00-\u9fa5]{0,}$/;
+    //     if (reg.test(val)){
+    //         console.log('通过验证')
+    //     }else {
+    //         console.log('不通过验证')
+    //     }
+    // })
+</script>
+</body>
+</html>

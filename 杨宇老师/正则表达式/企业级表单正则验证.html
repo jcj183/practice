@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../../utils/utils.js"></script>
+    <title>Document</title>
+</head>
+<body>
+<form action="">
+    <p>
+      用户：  <input type="text" name="username" id="input">
+        <span id="tips"></span>
+    </p>
+    <p>
+        <button id="sub">提交</button>
+    </p>
+</form>
+<script>
+        input.addEventListener('input',function (){
+            if (characters(input.value)){
+                tips.innerHTML = '成功'
+                tips.style.color = 'green'
+
+            }else {
+                tips.innerHTML = '失败'
+                tips.style.color = 'red'
+            }
+        })
+        sub.addEventListener('click',function (e){
+            let flag = characters(input.value)
+            if (flag){
+                alert('成功')
+
+            }else{
+                alert('失败')
+                console.log(11)
+                e.preventDefault()
+            }
+        })
+</script>
+</body>
+</html>

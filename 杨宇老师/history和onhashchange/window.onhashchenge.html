@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<a href="#h1">盒子一</a>
+<a href="#h2">盒子二</a>
+<a href="#h3">盒子三</a>
+<script>
+    window.onhashchange = function (){
+        // console.log(location.hash)
+        switch (location.hash){
+            case '#h1':
+                console.log(location.hash)
+                break
+            case "#h2":
+                console.log(location.hash)
+                break
+            default:
+                console.log('不是前两个标签')
+        }
+    }
+</script>
+</body>
+</html>
