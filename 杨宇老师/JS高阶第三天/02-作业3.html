@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+            3.实现一个对象深拷贝函数cloneDeep()，要求：（阿里真题，扩展）
+                （1）对象属性可能是函数；
+                （2）不需要拷贝原型链上的属性和方法；
+        
+        
+        */
+
+        //1.定义一个复杂对象 
+        let user = {
+            name: '张三',
+            info: {
+                age: 20,
+                sex: '女',
+                sNo: '857',
+                fav: ['html', 'less', 'js', 'vue'],
+                data: {
+                    money: '200000',
+                    address: '成都高新'
+                },
+                show: function () {
+                    console.log('秀儿');
+                }
+            },
+            fun: function () {
+                console.log('666');
+            }
+        }
+
+        //数据类型判定--后期制作成辅助类的小工具 ---封装函数
+        //获取数据类型
+        function getType(val) {
+            return Object.prototype.toString.call(val)
+        }
+
+        //判定引用类型的函数
+        function isObj(val) {
+            return getType(val) == '[object Object]'
+        }
+
+        function isFn(val) {
+            return getType(val) == '[object Function]'
+        }
+
+        function isArray(val) {
+            return getType(val) == '[object Array]'
+        }
+
+        //3.封装cloneDeep()
+
+        function cloneDeep(obj) {
+            //定义一个对象
+            let cloneObj = isObj(obj) ? {} : [];
+
+            //遍历obj进行克隆对象所有的属性和方法
+            for (const key in obj) {
+                if (Object.hasOwnProperty.call(obj, key)) {
+                    // console.log(`当前key是: ${key} 对应的value是: ${obj[key]}`);
+
+                    //通过对键值的判定,确认是否再次使用 cloneDeep() ---递归
+                    let val = obj[key];
+
+                    //判定数据类型
+                    if (isObj(val) || isArray(val)) {// 对象和数组
+                        cloneObj[key] = cloneDeep(val)
+                    } else if (isFn(val)) {//函数
+                        cloneObj[key] = eval("(" + val + ")")
+                    } else {//基本类型
+                        cloneObj[key] = val
+                    }
+
+
+                    // cloneObj[key] = val
+                }
+            }
+
+
+
+            return cloneObj;
+        }
+
+
+        //4.调用
+        let result = cloneDeep(user);
+        console.log(result);
+
+
+    </script>
+</body>
+
+</html>

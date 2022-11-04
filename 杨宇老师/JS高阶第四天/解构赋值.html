@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+    //解构赋值数组
+    let arr = ['老大', '老二', '老三'];
+    //es5访问内容写法
+    // console.log(arr[1])
+    //es6写法//每个内容一一对应
+    // [a,b,c] = arr;
+    // console.log(a)
+    // console.log(b)
+    // console.log(c)
+
+    //解构赋值对象
+    //键名需要几个取几个
+    //  let obj = {
+    //      name:'小小',
+    //      age:90,
+    //      sex:'女'
+    //  }
+    // let  {name,age,sex} = obj
+    //  console.log(name)
+    //  console.log(age)
+    //  console.log(sex)
+
+
+    //函数参数的一一对应
+        //  数组
+    // function fn([a=0,b=0]=[]) {
+    //     console.log(a + b)
+    // }
+    // fn()
+    // fn([10,20])
+        //对象
+    // function fn1({x=0,y=0}={}){
+    //     console.log(x+y)
+    // }
+    // fn1({})
+    // fn1({x:20,y:20})
+
+    //变更xy的值
+    // function fnn({x=0,y=0}={}){
+    //     [y,x ]= [x,y]
+    //     console.log( y,x)
+    // }
+    // fnn({x:1,y:2})
+
+    //提取接口指定属性
+    const jsonData = {
+        id: 42,
+        status: "OK",
+        data: [867, 5309],
+        otherData1: 18,
+        otherData2: ['www', 'itsource', 'cn'],
+        otherData3: {
+            a: 1
+        }
+    };
+
+    let {id,status,data} = jsonData
+    console.log({id,status,data})
+</script>
+</body>
+</html>

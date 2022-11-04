@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+    function Person(name,age){
+        this.name = name;
+        this.age = age;
+        sex = '女'
+        this.fn = function (){
+            console.log('这是动态方法')
+        }
+    }
+    Person.fn1 = function (){
+        console.log('这是静态方法')//静态方法不能被实例对象访问,只能被构造函数使用
+    }
+    let person = new Person('小霞','20')
+
+    console.log(person.name);
+    console.log(person.age);
+    person.fn()
+    // console.log(person.fn1());
+    Person.fn1()
+</script>
+</body>
+</html>

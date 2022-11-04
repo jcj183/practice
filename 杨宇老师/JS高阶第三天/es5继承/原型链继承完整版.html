@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+    //父类
+    function F1(name, age, sex) {
+        this.name = name;
+        this.age = age;
+        this.sex = sex;
+        this.show = function (){
+            console.log('父亲的方法')
+        }
+    }
+
+    //子类
+    function F2(name, age, sex, son) {
+        // this.name = name;
+        // this.age = age;
+        // this.sex = sex;
+        //利用改变this来继承父类属性
+        F1.call(this,name, age, sex)
+        //子类自己的属性
+        this.son = son;
+        //子类自己的方法
+        this.fn = function (){
+            console.log('子类的方法')
+        }
+    }
+
+    //继承父类方法
+    F2.prototype = new F1()
+    //寄生还原式
+    F2.prototype = Object.create(F1.prototype)//现需要在实例对象之前设置
+
+    let  f2 = new F2('小袁',20,'男')
+    //还原
+    f2.__proto__.constructor = F2
+
+        console.log(f2)
+</script>
+</body>
+</html>

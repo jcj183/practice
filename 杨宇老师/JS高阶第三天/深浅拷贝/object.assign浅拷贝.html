@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    //Object.assign浅拷贝对象，基本数据类型不共享，引用数据类型共享
+    let user = {
+        name:'张三',
+        age :90,
+        fav:['css','js','html']
+    }
+
+    let user2 = Object.assign({},user)
+    user2.name = '李四';
+    user2.fav[1] = 'php';
+    console.log(user);
+    console.log(user2);
+</script>
+</body>
+</html>

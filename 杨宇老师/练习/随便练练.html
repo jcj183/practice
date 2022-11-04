@@ -34,39 +34,60 @@
 <body>
 
 <script>
-    // //设置请求头
-    // let xml = new XMLHttpRequest();
-    // //请求方式和地址
-    // xml.open('post','url');
-    // //监听请求方式
-    // xml.onreadystatechange = function(){
-    //     if (xml.readyState===4&&xml.status===200){
-    //         let data = xml.responseText
-    //     }
-    // }
-    // //设置请求头
-    // xml.setRequestHeader('Content-Type','application/x-www-form-urlencoded')
-    // //发送请求方式
-    // xml.send()
+    //封装获取数据类型函数
+    function getType(obj) {
+        return Object.prototype.toString.call(obj)
+    }
 
-    // let xml =new XMLHttpRequest();
-    // xml.open('get','url')
-    // xml.onreadystatechange = function (){
-    //     if (xml.readyState===4&&xml.status===200){
-    //         let data = xml.responseText
-    //     }
-    // }
-    // xml.send()
-    let xm = {
-        fn : function (content1,content2){
-            console.log(`${this.name}说${content1} ${content2}`)
+    //封装Object类型
+    function Obj(obj) {
+        return getType(obj) === '[object Object]'
+    }
+
+    //封装Array类型
+    function Arr(obj) {
+        return getType(obj) === '[object Array]'
+    }
+
+    //封装Function类型
+    function Fun(obj) {
+        return getType(obj) === '[object Function]'
+    }
+    let user = {
+        name: '张三',
+        age: 90,
+        fav: ['css', 'js', {data: ['11', '22', '33']}],
+        // fn:function (){
+        //     console.log(111)
+        // }
+    }
+
+    //封装拷贝函数
+    function Clone(obj) {
+        //判断数据类型
+        // console.log(obj)
+        let clone = Obj(obj) ? {} : [];
+        for (const objKey in obj) {
+            if (Object.hasOwnProperty.call(obj, objKey)) {//判断obj的数据类型
+                if (Obj(obj[objKey])) {
+                    clone[objKey] = Clone(obj[objKey]) //递归
+                } else if (Arr(obj[objKey])) {
+                    clone[objKey] = Clone(obj[objKey])   //递归
+                } else if (Fun(obj[objKey])) {
+                    Clone(obj[objKey])      //递归
+                }
+                else {
+                    clone[objKey] = obj[objKey]
+                }
+            }
+
         }
-    }
-    let xw = {
-        name:'小王'
+        return clone
     }
 
-    xm.fn.call(xw,'今天天气不错','可以去玩耍')
+    console.log(user)
+    console.log(Clone(user));
+
 
 
 

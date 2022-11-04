@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+    class Person {
+        constructor(name,age){
+            this.name = name;
+            this.age = age;
+        }
+        fn(){
+            console.log('这是父级方法')
+        }
+    }
+    class Son extends Person {
+        constructor(name,age) {
+            super(name,age);//需要写在其他属性前面
+        }
+         sex = '女'
+        fn1(){
+            console.log('这是子级方法')
+        }
+    }
+    let son = new Son('小熊',20)
+    console.log(son)
+    son.fn()
+    son.fn1()
+    console.log(son.sex);
+</script>
+</body>
+</html>
